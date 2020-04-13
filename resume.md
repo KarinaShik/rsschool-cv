@@ -1,4 +1,4 @@
-# karina shik
+# Karina Shik
 ### Web-developer
 
 
