@@ -25,7 +25,43 @@ C#, HTML5, CSS3
 
 ### Code examples (latest)
 
-Code examples here soon
+```c#
+public int[,] RandGeneration(int row, int col)
+{
+    Random random = new Random();
+    int[,] arr = new int[row, col];
+
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < col; j++)
+        {
+            arr[i, j] = random.Next(8, 400);
+        }
+    }
+    return arr;
+}
+public void SequenceToFile(string path, string binary_sequence)
+{
+    using (StreamWriter file = new StreamWriter($"{path}", false, System.Text.Encoding.Default))
+    {
+        file.WriteLine(binary_sequence);
+    }
+}
+public string SequenceFromFile(string path)
+{
+    try
+    {
+        using (StreamReader file = new StreamReader(path))
+        {
+            return file.ReadToEnd();
+        }
+    }
+    catch (Exception excpt)
+    {
+        return excpt.Message;
+    }
+}
+```
 
 
 ### Experience
